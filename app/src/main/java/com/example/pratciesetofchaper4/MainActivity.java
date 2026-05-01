@@ -28,18 +28,12 @@ public class MainActivity extends AppCompatActivity {
         editText = findViewById(R.id.editText);
 
         button.setOnClickListener(v -> {
-            String urltext = editText.getText().toString().trim();
-            if (urltext.isEmpty()) {
-                Toast.makeText(this, "Enter The url Plz", Toast.LENGTH_SHORT).show();
-            } else  {
-                Uri webpage = Uri.parse(urltext);
-                Intent intent = new Intent(Intent.ACTION_VIEW, webpage);
-
-                startActivity(intent);
-            }
-
+            String urltext = editText.getText().toString();
+            Uri webpage = Uri.parse(urltext);
+            Intent intent = new Intent(Intent.ACTION_VIEW, webpage);
+            Intent chosser = Intent.createChooser()
 
         });
 
-  }
+    }
 }
