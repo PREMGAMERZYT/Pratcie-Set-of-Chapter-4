@@ -4,4 +4,5 @@
     <string name="Button1">No</string>
     <string name="Button2">Yes</string>
     <string name="Content_description">Avatar</string>
+    <string name="EditTextName">Url</string>
 </resources>
