@@ -3,7 +3,9 @@
     <string name="Person_name">Prem Kumar</string>
     <string name="Button1">No</string>
     <string name="Button2">Yes</string>
-    <string name="Content_description">Avatar</string>
+    <string name="Content_description">java logo</string>
     <string name="EditTextName">Url</string>
-    <string name="heading">Guess The Number</string>
+    <string name="heading">Guess The Number Between 0 - 100</string>
+    <string name="Conform">Conform</string>
+    <string name="Reset">Reset</string>
 </resources>

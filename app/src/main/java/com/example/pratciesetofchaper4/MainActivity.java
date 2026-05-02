@@ -33,7 +33,7 @@ public class MainActivity extends AppCompatActivity {
             int randomintehger  = rand.nextInt(100);
             Log.d("Prem", String.valueOf(randomintehger) );
         }
-
+        
 
     }
 }
