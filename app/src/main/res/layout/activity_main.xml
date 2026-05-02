@@ -5,4 +5,22 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity"/>
+    tools:context=".MainActivity">
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="184dp"
+        android:layout_height="176dp"
+        app:srcCompat="@drawable/java"
+        tools:layout_editor_absoluteX="113dp"
+        tools:layout_editor_absoluteY="116dp" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/heading"
+        android:textSize="24sp"
+        tools:layout_editor_absoluteX="103dp"
+        tools:layout_editor_absoluteY="329dp" />
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -5,4 +5,5 @@
     <string name="Button2">Yes</string>
     <string name="Content_description">Avatar</string>
     <string name="EditTextName">Url</string>
+    <string name="heading">Guess The Number</string>
 </resources>
