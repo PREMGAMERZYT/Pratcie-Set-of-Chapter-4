@@ -19,21 +19,33 @@ import androidx.core.view.WindowInsetsCompat;
 public class MainActivity extends AppCompatActivity {
 
     private Button button;
+    private Button button2;
     private EditText editText;
+
+    private int randnumber;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        Random rand = new Random();
 
-        for (int i = 0; i <=10; i++) {
-            int randomintehger  = rand.nextInt(100);
-            Log.d("Prem", String.valueOf(randomintehger) );
-        }
-        
+        button = findViewById(R.id.button);
+        button2 = findViewById(R.id.button2);
+        randnumber = numgenerator();
+        Log.d("harry", String.valueOf(randnumber));
+
+        button2.setOnClickListener(v -> {
+            randnumber = numgenerator();
+            Log.d("harry",String.valueOf(randnumber));
+        });
+
+    }
+
+    public static int numgenerator() {
+        Random rand = new Random();
+        int randinteger = rand.nextInt(100);
+        return randinteger;
 
     }
 }
