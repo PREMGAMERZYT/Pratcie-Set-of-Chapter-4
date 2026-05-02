@@ -8,4 +8,5 @@
     <string name="heading">Guess The Number Between 0 - 100</string>
     <string name="Conform">Conform</string>
     <string name="Reset">Reset</string>
+    <string name="Congrulation">Congrulation The Number was = </string>
 </resources>
