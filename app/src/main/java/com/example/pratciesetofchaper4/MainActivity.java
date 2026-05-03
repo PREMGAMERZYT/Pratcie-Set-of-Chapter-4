@@ -3,28 +3,93 @@ package com.example.pratciesetofchaper4;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.Random;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import org.w3c.dom.Text;
+
 public class MainActivity extends AppCompatActivity {
+
+    private Button Yes;
+    private Button no;
+
+    private TextView textView;
 
     private String[] questions = {"Apple Is Bigger Then WaterMelon?","Tree Is Bigger Then Plant?","Elephant Is Bigger Then Ant?","Is Java Was Invented in 2008?","Is Africa Is Bigger Then Russia"};
 
     private boolean[] answers = {false,true,true,false,true};
+    private int score = 0;
+
+    private int count = 0;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        for (int i = 0; i<5; i++) {
-            Log.d("prem", questions[i]);
-        }
+        Yes = findViewById(R.id.Yes);
+        no = findViewById(R.id.NO);
+        textView = findViewById(R.id.textView4);
+
+        textView.setText(questions[0]);
+
+
+
+        Yes.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                CheckingTrue();
+            }
+        });
+
+        no.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                CheckingFalse();
+            }
+        });
+
+
+
     }
+
+    public void CheckingTrue() {
+        if (answers[count] == true) {
+            Toast.makeText(this, "Correct", Toast.LENGTH_SHORT).show();
+            score++;
+        } else  {
+            Toast.makeText(this, "Worng", Toast.LENGTH_SHORT).show();
+        }
+        Nextquestioon();
+    }
+
+    public void CheckingFalse() {
+        if (answers[count] == false) {
+            Toast.makeText(this, "Correct", Toast.LENGTH_SHORT).show();
+            score++;
+        } else  {
+            Toast.makeText(this, "Wrong", Toast.LENGTH_SHORT).show();
+        }
+        Nextquestioon();
+    }
+
+    public void Nextquestioon() {
+        count++;
+
+        if (count >= questions.length) {
+            count = 0;
+            score = 0;
+        }
+
+        textView.setText(questions[count]);
+    }
+
 
 }

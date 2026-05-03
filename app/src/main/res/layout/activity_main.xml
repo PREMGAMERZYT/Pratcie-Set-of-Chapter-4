@@ -52,7 +52,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="68dp"
-        android:text="Button"
+        android:text="No"
         app:layout_constraintBaseline_toBaselineOf="@+id/Yes"
         app:layout_constraintStart_toStartOf="parent" />
 
@@ -62,7 +62,7 @@
         android:layout_height="wrap_content"
         android:layout_marginEnd="76dp"
         android:layout_marginBottom="296dp"
-        android:text="Button"
+        android:text="Yes"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
