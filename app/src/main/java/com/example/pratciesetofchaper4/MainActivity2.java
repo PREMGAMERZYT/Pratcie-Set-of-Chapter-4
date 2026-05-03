@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -37,10 +38,35 @@ public class MainActivity2 extends AppCompatActivity {
         address = findViewById(R.id.address);
         subject = findViewById(R.id.subject);
         message = findViewById(R.id.message);
+        send = findViewById(R.id.send);
 
-        String Address = address.getText().toString();
-        String Subject = subject.getText().toString();
-        String Message = message.getText().toString();
+
+        send.setOnClickListener(v -> {
+            String Address = address.getText().toString();
+            String Subject = subject.getText().toString();
+            String Message = message.getText().toString();
+            
+            if (Address.isEmpty()) {
+                Toast.makeText(this, "Please Enter The Email", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        public void composeEmail(String[] addresses, String subject, Uri attachment) {
+            Intent intent = new Intent(Intent.ACTION_SEND);
+            intent.setType("*/*");
+            intent.putExtra(Intent.EXTRA_EMAIL, addresses);
+            intent.putExtra(Intent.EXTRA_SUBJECT, subject);
+            intent.putExtra(Intent.EXTRA_STREAM, attachment);
+            if (intent.resolveActivity(getPackageManager()) != null) {
+                startActivity(intent);
+            }
+        }
+
+
+
+
+
+
 
 
 
