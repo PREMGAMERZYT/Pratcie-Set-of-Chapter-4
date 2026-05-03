@@ -35,7 +35,13 @@ public class MainActivity2 extends AppCompatActivity {
         textView.setText(congrts);
 
         address = findViewById(R.id.address);
-        subject
+        subject = findViewById(R.id.subject);
+        message = findViewById(R.id.message);
+
+        String Address = address.getText().toString();
+        String Subject = subject.getText().toString();
+        String Message = message.getText().toString();
+
 
 
 
