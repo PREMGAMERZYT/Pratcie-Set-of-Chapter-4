@@ -5,7 +5,7 @@
     <string name="Button2">Yes</string>
     <string name="Content_description">java logo</string>
     <string name="EditTextName">Url</string>
-    <string name="heading">Guess The Number Between 0 - 100</string>
+    <string name="heading">Welcome To Quiz Game</string>
     <string name="Conform">Conform</string>
     <string name="Reset">Reset</string>
     <string name="Congrulation">Congrulation The Number was = </string>
