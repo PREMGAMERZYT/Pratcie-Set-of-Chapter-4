@@ -13,55 +13,18 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class MainActivity extends AppCompatActivity {
 
-    private Button button;
-    private Button button2;
-    private EditText editText;
-    private int randnumber;
+    private String[] questions = {"Apple Is Bigger Then WaterMelon?","Tree Is Bigger Then Plant?","Elephant Is Bigger Then Ant?","Is Java Was Invented in 2008?","Is Africa Is Bigger Then Russia"};
 
-    private int gussednumber;
+    private boolean[] answers = {false,true,true,false,true};
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        button = findViewById(R.id.NO);
-        button2 = findViewById(R.id.button2);
-        editText = findViewById(R.id.editText);
-        randnumber = numgenerator();
-
-
-        Log.d("harry", String.valueOf(randnumber));
-
-
-        button.setOnClickListener(v -> {
-            String guessnumber1 = editText.getText().toString();
-            Log.e("prem", String.valueOf(guessnumber1));
-
-            if (guessnumber1.isEmpty()) {
-                Toast.makeText(this, "Please Enter The Number And the", Toast.LENGTH_SHORT).show();
-            }
-            int gussednumber = Integer.parseInt(guessnumber1);
-            if (randnumber == gussednumber) {
-
-                Intent intent = new Intent(MainActivity.this, MainActivity2.class);
-                intent.putExtra("raandnumber", randnumber);
-                startActivity(intent);
-            } else {
-                Toast.makeText(this, "Wrong Guess Guess Again", Toast.LENGTH_SHORT).show();
-            }
-        });
-
-        button2.setOnClickListener(v -> {
-            randnumber = numgenerator();
-            Log.d("harry", String.valueOf(randnumber));
-        });
-
+        for (int i = 0; i<5; i++) {
+            Log.d("prem", questions[i]);
+        }
     }
 
-    public static int numgenerator() {
-        Random rand = new Random();
-        int randinteger = rand.nextInt(100);
-        return randinteger;
-
-    }
 }
