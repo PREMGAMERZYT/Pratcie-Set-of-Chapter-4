@@ -69,5 +69,7 @@ public class MainActivity2 extends AppCompatActivity {
             Toast.makeText(this, "Email App not found", Toast.LENGTH_SHORT).show();
         }
     }
+
+
 }
 
