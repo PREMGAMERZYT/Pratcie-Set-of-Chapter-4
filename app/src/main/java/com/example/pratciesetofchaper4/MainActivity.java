@@ -41,8 +41,8 @@ public class MainActivity extends AppCompatActivity {
 
         button.setOnClickListener(v -> {
             String guessnumber1 = editText.getText().toString();
+            Log.e("prem", String.valueOf(guessnumber1));
 
-            Log.e("prem", String.valueOf(gussednumber));
             if (guessnumber1.isEmpty()) {
                 Toast.makeText(this, "Please Enter The Number And the", Toast.LENGTH_SHORT).show();
             }
