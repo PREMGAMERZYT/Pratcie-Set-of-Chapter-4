@@ -5,13 +5,14 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
+import android.content.Intent;
+import android.net.Uri;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
-
 
 
 public class MainActivity2 extends AppCompatActivity {
@@ -30,7 +31,7 @@ public class MainActivity2 extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main2);
-        int ra = getIntent().getIntExtra("raandnumber",0);
+        int ra = getIntent().getIntExtra("raandnumber", 0);
         String congrts = "Congrulation You Won The Number Was = " + ra;
         textView = findViewById(R.id.textView2);
         textView.setText(congrts);
@@ -45,32 +46,28 @@ public class MainActivity2 extends AppCompatActivity {
             String Address = address.getText().toString();
             String Subject = subject.getText().toString();
             String Message = message.getText().toString();
-            
+
             if (Address.isEmpty()) {
                 Toast.makeText(this, "Please Enter The Email", Toast.LENGTH_SHORT).show();
+                return;
             }
+
+            composeEmail(Address,Subject,Message);
+
         });
+    }
 
-        public void composeEmail(String[] addresses, String subject, Uri attachment) {
-            Intent intent = new Intent(Intent.ACTION_SEND);
-            intent.setType("*/*");
-            intent.putExtra(Intent.EXTRA_EMAIL, addresses);
-            intent.putExtra(Intent.EXTRA_SUBJECT, subject);
-            intent.putExtra(Intent.EXTRA_STREAM, attachment);
-            if (intent.resolveActivity(getPackageManager()) != null) {
-                startActivity(intent);
-            }
+    public void composeEmail(String addresses, String subject, String attachment) {
+        Intent intent = new Intent(Intent.ACTION_SEND);
+        intent.setType("*/*");
+        intent.putExtra(Intent.EXTRA_EMAIL, addresses);
+        intent.putExtra(Intent.EXTRA_SUBJECT, subject);
+        intent.putExtra(Intent.EXTRA_STREAM, attachment);
+        if (intent.resolveActivity(getPackageManager()) != null) {
+            startActivity(intent);
+        } else {
+            Toast.makeText(this, "Email App not found", Toast.LENGTH_SHORT).show();
         }
-
-
-
-
-
-
-
-
-
-
-
     }
 }
+
