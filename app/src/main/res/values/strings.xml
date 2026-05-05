@@ -8,6 +8,6 @@
     <string name="heading">Welcome To Quiz Game</string>
     <string name="Conform">Conform</string>
     <string name="Reset">Reset</string>
-    <string name="Congrulation">Congrulation The Number was = </string>
+    <string name="Congrulation">Congrulation The Score was = </string>
     <string name="Send_Emain">Send An email</string>
 </resources>
