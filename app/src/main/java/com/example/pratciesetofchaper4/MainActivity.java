@@ -22,9 +22,9 @@ public class MainActivity extends AppCompatActivity {
 
     private TextView textView;
 
-    private String[] questions = {"Apple Is Bigger Then WaterMelon?","Tree Is Bigger Then Plant?","Elephant Is Bigger Then Ant?","Is Java Was Invented in 2008?","Is Africa Is Bigger Then Russia"};
+    private String[] questions = {"Apple Is Bigger Then WaterMelon?", "Tree Is Bigger Then Plant?", "Elephant Is Bigger Then Ant?", "Is Java Was Invented in 2008?", "Is Africa Is Bigger Then Russia"};
 
-    private boolean[] answers = {false,true,true,false,true};
+    private boolean[] answers = {false, true, true, false, true};
     private int score = 0;
 
     private int count = 0;
@@ -41,7 +41,6 @@ public class MainActivity extends AppCompatActivity {
         textView.setText(questions[0]);
 
 
-
         Yes.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -55,16 +54,13 @@ public class MainActivity extends AppCompatActivity {
                 CheckingFalse();
             }
         });
-
-
-
     }
 
     public void CheckingTrue() {
         if (answers[count] == true) {
             Toast.makeText(this, "Correct", Toast.LENGTH_SHORT).show();
             score++;
-        } else  {
+        } else {
             Toast.makeText(this, "Worng", Toast.LENGTH_SHORT).show();
         }
         Nextquestioon();
@@ -74,7 +70,7 @@ public class MainActivity extends AppCompatActivity {
         if (answers[count] == false) {
             Toast.makeText(this, "Correct", Toast.LENGTH_SHORT).show();
             score++;
-        } else  {
+        } else {
             Toast.makeText(this, "Wrong", Toast.LENGTH_SHORT).show();
         }
         Nextquestioon();
