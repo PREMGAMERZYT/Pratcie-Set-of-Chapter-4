@@ -1,5 +1,7 @@
 package com.example.pratciesetofchaper4;
 
+import static java.lang.String.*;
+
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -12,6 +14,8 @@ import android.widget.Toast;
 import java.util.Random;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.google.android.material.color.utilities.Score;
 
 import org.w3c.dom.Text;
 
@@ -54,16 +58,22 @@ public class MainActivity extends AppCompatActivity {
                 CheckingFalse();
             }
         });
+
+        Intent intent = new Intent(MainActivity.this,MainActivity2.class);
+        intent.putExtra("score",score);
+
     }
 
     public void CheckingTrue() {
         if (answers[count] == true) {
             Toast.makeText(this, "Correct", Toast.LENGTH_SHORT).show();
+
             score++;
         } else {
             Toast.makeText(this, "Worng", Toast.LENGTH_SHORT).show();
         }
         Nextquestioon();
+        Log.d("harry", valueOf(score));
     }
 
     public void CheckingFalse() {
@@ -74,14 +84,14 @@ public class MainActivity extends AppCompatActivity {
             Toast.makeText(this, "Wrong", Toast.LENGTH_SHORT).show();
         }
         Nextquestioon();
+        Log.d("harry", valueOf(score));
     }
 
     public void Nextquestioon() {
         count++;
 
         if (count >= questions.length) {
-            count = 0;
-            score = 0;
+
         }
 
         textView.setText(questions[count]);
