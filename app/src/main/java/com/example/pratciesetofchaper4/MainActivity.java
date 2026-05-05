@@ -34,6 +34,7 @@ public class MainActivity extends AppCompatActivity {
     private int count = 0;
 
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -59,8 +60,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        Intent intent = new Intent(MainActivity.this,MainActivity2.class);
-        intent.putExtra("score",score);
+
 
     }
 
@@ -89,9 +89,11 @@ public class MainActivity extends AppCompatActivity {
 
     public void Nextquestioon() {
         count++;
+        Intent intent = new Intent(MainActivity.this,MainActivity2.class);
+        intent.putExtra("score",score);
 
         if (count >= questions.length) {
-
+            startActivity(intent);
         }
 
         textView.setText(questions[count]);
