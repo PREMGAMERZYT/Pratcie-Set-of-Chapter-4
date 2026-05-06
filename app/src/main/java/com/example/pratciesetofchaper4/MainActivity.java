@@ -42,32 +42,24 @@ public class MainActivity extends AppCompatActivity {
         Yes = findViewById(R.id.Yes);
         no = findViewById(R.id.NO);
         textView = findViewById(R.id.textView4);
-
         textView.setText(questions[0]);
-
-
         Yes.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 CheckingTrue();
             }
         });
-
         no.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 CheckingFalse();
             }
         });
-
-
-
     }
 
     public void CheckingTrue() {
-        if (answers[count] == true) {
+        if (answers[count]) {
             Toast.makeText(this, "Correct", Toast.LENGTH_SHORT).show();
-
             score++;
         } else {
             Toast.makeText(this, "Worng", Toast.LENGTH_SHORT).show();
@@ -77,14 +69,16 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void CheckingFalse() {
-        if (answers[count] == false) {
+        if (!answers[count]) {
             Toast.makeText(this, "Correct", Toast.LENGTH_SHORT).show();
             score++;
         } else {
             Toast.makeText(this, "Wrong", Toast.LENGTH_SHORT).show();
         }
+
         Nextquestioon();
         Log.d("harry", valueOf(score));
+
     }
 
     public void Nextquestioon() {
@@ -98,6 +92,4 @@ public class MainActivity extends AppCompatActivity {
 
         textView.setText(questions[count]);
     }
-
-
 }
